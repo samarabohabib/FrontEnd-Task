@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.con {
+  position: relative;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.input {
+  border: 0.3rem solid rgb(136, 76, 76);
+  border-radius: 0.6rem;
+  font-size: 2rem;
+  min-width: 6rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.masonry {
+  columns: 6 8rem;
+  column-gap: 1rem;
+}
+.masonry .picture {
+  margin: 0 1rem 1rem 0;
+  width: 100%;
+}
+
+.masonry div img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.text:hover {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.picture:hover .overlay {
+  filter: alpha(opacity=80);
+  opacity: 1;
+}
+
+.picture:hover img {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  background-image: radial-gradient(rgb(197, 153, 153), rgb(143, 86, 86), rgb(95, 54, 54));
+}
+
+.overlay {
+  background: rgba(241, 241, 241, 0.596);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.link,
+.link:hover {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: black;
+  cursor: pointer;
+}
+
+.overlay:before,
+.overlay h3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.overlay:before {
+  content: "";
+  height: 100%;
+}
+
+.overlay h3 {
+  width: 100%;
+  padding: 0 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+}
+
+/*  ---------------------------------- My custom Modal style--------------------- */
+
+.h4 {
+  font-size: 2.5rem !important;
+  color: rgb(136, 76, 76);
+}
+
+.modal-content button {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  background-color: rgb(136, 76, 76);
+  border: 0.2rem solid transparent;
+  border-radius: 0.6rem;
 }
