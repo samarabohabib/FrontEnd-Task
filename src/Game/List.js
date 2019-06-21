@@ -58,7 +58,7 @@ export default class GameList extends React.Component {
           </div>
 
           <br />
-          <div className="container mt-5" onScroll={this.handleScroll}>
+          <div className="container mt-5">
             <div className="masonry">
               {rawData.map(m => (
                 <GameCard key={m.tail} {...m} showModal={this.handleShowModal} modalData={this.getCardData} />
