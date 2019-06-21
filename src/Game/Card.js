@@ -6,7 +6,7 @@ export default class GameCard extends React.Component {
     return (
       <>
         <div className="picture con">
-          <img className="lazyload image" data-src={image} alt="" />
+          <img className="image" src={image} alt="" />
           <div className="overlay">
             <h3>
               <a className="link" title="" onClick={() => this.props.showModal(name, character, type)}>
