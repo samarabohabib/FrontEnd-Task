@@ -29,13 +29,6 @@ export default class GameList extends React.Component {
 
   handle = e => {
     this.setState({ ResultValue: e.target.value });
-    let rawData = this.state.data;
-
-    if (this.state.ResultValue !== "") {
-      rawData = rawData.filter(game => game.name.toLowerCase().includes(this.state.ResultValue.toLowerCase()));
-    }
-
-    this.setState({ data: rawData });
   };
 
   handleCloseModal = () => {
@@ -51,6 +44,11 @@ export default class GameList extends React.Component {
 
   render() {
     const { data } = this.state;
+    let rawData = this.state.data;
+
+    if (this.state.ResultValue !== "") {
+      rawData = rawData.filter(game => game.name.toLowerCase().includes(this.state.ResultValue.toLowerCase()));
+    }
 
     return (
       <>
@@ -62,7 +60,7 @@ export default class GameList extends React.Component {
           <br />
           <div className="container mt-5">
             <div className="masonry">
-              {data.map(m => (
+              {rawData.map(m => (
                 <GameCard key={m.tail} {...m} showModal={this.handleShowModal} modalData={this.getCardData} />
               ))}
             </div>
